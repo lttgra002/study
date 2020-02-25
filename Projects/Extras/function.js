@@ -70,20 +70,20 @@
 //=>Function
 
 //Normal
-const greet = function(){
-    return "hello";
-};
+// const greet = function(){
+//     return "hello";
+// };
 //Arrow
-const arrowGreet = () => "helloArrow";
+// const arrowGreet = () => "helloArrow";
 
-console.log(greet());
-console.log(arrowGreet());
+// console.log(greet());
+// console.log(arrowGreet());
 
 //=>Method
 
-const name = "Grant";
+// const name = "Grant";
 
-console.log(name.toUpperCase());
+// console.log(name.toUpperCase());
 
 //==========CALLBACK FUNCTION=======
 //When you use a function in the argument of another function
@@ -103,3 +103,19 @@ const myFunk1 = function(callBackFunc1){
 myFunk1(function(value){
     console.log(value)
 })
+
+const doHomeWork = (subject, callBack2) => {
+    console.log(`You must study ${subject}`);
+    callBack2();
+};
+
+const newFunc = () => {console.log(20*10)};
+
+// doHomeWork("math", newFunc);
+
+const doCalcFunc = (callBack3) => {
+    callBack3();
+}
+
+doCalcFunc(newFunc);
+

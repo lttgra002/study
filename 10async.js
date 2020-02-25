@@ -33,36 +33,40 @@
 // //============HTTP REQUESTS=============
 
 //Create the funtion
-const getTodos = (callback) => {
+// const getTodos = (callback) => {
 
-    const request = new XMLHttpRequest();
+//     const request = new XMLHttpRequest();
 
-    request.addEventListener("readystatechange", () => {
-        if(request.readyState === 4 && request.status === 200){
-            //add in the callback function with the arguments
-            callback(undefined, request.responseText)
-        } else if(request.readyState === 4){
-            callback("Couldn't fetch resource", undefined)
-        }
-    });
+//     request.addEventListener("readystatechange", () => {
+//         if(request.readyState === 4 && request.status === 200){
+//             //Create an array out of the JSON data
+//             const data = JSON.parse(request.responseText)
+//             //add in the callback function with the arguments
+//             callback(undefined, data)
+//         } else if(request.readyState === 4){
+//             callback("Couldn't fetch resource", undefined)
+//         }
+//     });
 
-    request.open("GET", "https://jsonplaceholder.typicode.com/todos/");
-    request.send();
+//     //request.open("GET", "https://jsonplaceholder.typicode.com/todos/");
+//     //If I want to point to my own JSON file
+//     request.open("GET", "10async.json");
+//     request.send();
 
-};
+// };
 
-console.log(1);
-console.log(2);
+// console.log(1);
+// console.log(2);
 
-//To run the code
-getTodos((err, data) => {
-    console.log("callback fired");
-    if(err){
-        console.log(err)
-    } else{
-        console.log(data)
-    }
-});
+// //To run the code
+// getTodos((err, data) => {
+//     console.log("callback fired");
+//     if(err){
+//         console.log(err)
+//     } else{
+//         console.log(data)
+//     }
+// });
 
-console.log(4);
-console.log(5);
+// console.log(4);
+// console.log(5);
