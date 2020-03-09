@@ -88,34 +88,49 @@
 //==========CALLBACK FUNCTION=======
 //When you use a function in the argument of another function
 
-const myFunc = (callBackFunc) => {
-    let value = 50;
-    callBackFunc(value);
-}
+// const myFunc = (callBackFunc) => {
+//     let value = 50;
+//     callBackFunc(value);
+// }
 
-myFunc(value => {console.log(value)})
+// myFunc(value => {console.log(value)})
 
-const myFunk1 = function(callBackFunc1){
-    let value = 60
-    callBackFunc1(value)
+// const myFunk1 = function(callBackFunc1){
+//     let value = 60
+//     callBackFunc1(value)
+// };
+
+// myFunk1(function(value){
+//     console.log(value)
+// })
+
+// const doHomeWork = (callBack2, subject) => {
+//    
+//     callBack2();
+//     console.log(`You must study ${subject}`);
+// };
+
+// const newFunc = () => {console.log(20*10)};
+
+// doHomeWork(newFunc, "math");
+
+// const doCalcFunc = (callBack3) => {
+//     callBack3();
+// }
+
+//doCalcFunc(newFunc);
+
+//Double Function test
+
+const doubleFunc = (function1, function2) => {
+     //The order of where the functions are structured determine when they called
+    
+    function1();
+    function2();
+    
 };
 
-myFunk1(function(value){
-    console.log(value)
-})
+const calcPara1 = () => console.log(20*20);
+const calcPara2 = () => console.log(10*10);
 
-const doHomeWork = (subject, callBack2) => {
-    console.log(`You must study ${subject}`);
-    callBack2();
-};
-
-const newFunc = () => {console.log(20*10)};
-
-// doHomeWork("math", newFunc);
-
-const doCalcFunc = (callBack3) => {
-    callBack3();
-}
-
-doCalcFunc(newFunc);
-
+doubleFunc(() => console.log(20*20), calcPara2);
