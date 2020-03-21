@@ -20,6 +20,10 @@ const updateUI = (data) => {
               <span class="temp">${weather.Temperature.Metric.Value}</span>
               <span class="degree">&deg;C</span>
             </div>
+            <div class="display-4 my-4">
+              <span class="temp">${weather.Temperature.Imperial.Value}</span>
+              <span class="degree">&deg;F</span>
+            </div>
     `
     
     //====Check time of day
@@ -102,7 +106,15 @@ cityForm.addEventListener("submit", e => {
         .then(data => {updateUI(data)})
         .catch(err => {console.log(err)})
 
-
-
+    //Set Local Storage
+    localStorage.setItem("city", city)
 
 })
+
+//A sting of any lenth is true
+//If nothing is stored then we get back a null, which is false
+if(localStorage.getItem("city")){
+    updateCity(localStorage.getItem("city"))
+    .then(data => updateUI(data))
+    .catch(err => console.log(err))
+}

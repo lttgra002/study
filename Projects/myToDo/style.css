@@ -1,0 +1,91 @@
+/*Body*/
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+/*hide Todo's*/
+
+.filteredTrue{
+    display: none !important;
+}
+
+.filteredFalse{
+    display: none !important;
+}
+
+
+/*Header Style*/
+
+.header{
+    font-size: 20px;
+}
+
+
+/*Grid Creation */
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px 40px 20px 500px;
+
+}
+
+h1{
+    grid-row: 1/2;
+    grid-column: 5/9;
+    justify-self: center;
+}
+
+.addDropdown{
+    grid-column: 5/9;
+    grid-row: 2/3;
+    
+    
+}
+
+.taskheader{
+    grid-column: 5/9;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    
+}
+
+.toDoContainer{
+    grid-column: 5/9;
+    grid-row: 4/5;
+    display: grid;
+    grid-template-columns: 1;
+}
+
+.task{
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr;
+}
+
+.delete{
+    justify-self: center;
+}
+
+
+
+/*Task Styles*/
+.task{
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+.completed{
+    margin-left: 10px;
+}
+
+/*Hover State*/
+
+.delete:hover{
+    cursor: pointer;
+}
+
